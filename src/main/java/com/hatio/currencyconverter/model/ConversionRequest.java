@@ -1,8 +1,16 @@
 package com.hatio.currencyconverter.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "Request to convert an amount from one currency to another")
 public class ConversionRequest {
+    @Schema(description = "Source currency", example = "EUR")
     private String from;
+
+    @Schema(description = "Target currency", example = "INR")
     private String to;
+
+    @Schema(description = "Amount to be converted", example = "100")
     private double amount;
 
     public ConversionRequest(String from,String to,double amount){
